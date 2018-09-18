@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="Aritex.Views.U_ResultadoCotizacion"
+             Title="Resultado">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding U_ResultadoCotizacion}"
+            Padding="5">
+            <StackLayout>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="{Binding TipoPrenda}">
+
+                </Label>
+                <Image>
+
+                </Image>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Genero">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        BindingContext="{Binding Genero}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Tipo Cuello">
+
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        BindingContext="{Binding TipoCuello}">
+
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="Titulo Tela">
+
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        BindingContext="{Binding TituloTela}">
+
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Text="Costo Hilaza">
+
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        BindingContext="{Binding CostoHilaza}">
+
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="Costo Tejed.">
+
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        BindingContext="{Binding CostoTejeduria}">
+                    </Label>
+                </Grid>
+                <Label
+                    BindingContext="{Binding ResCotizar, StringFormat='${0}'}"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Brown">
+                </Label>
+                <Button
+                    BackgroundColor="Blue"
+                    Command="{Binding VolverCotizarCommand}"
+                    Text="Volver"
+                    TextColor="White">
+                </Button>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

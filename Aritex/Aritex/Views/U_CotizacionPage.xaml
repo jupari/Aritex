@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aritex.Views.U_CotizacionPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="WhiteSmoke"
+             Title="Cotizar">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding U_Cotizacion}"
+            Margin="5,5">
+            <StackLayout>
+                <Label
+                    Margin="5"
+                    HorizontalOptions="CenterAndExpand"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    Text="Tipo de Prenda">
+                </Label>
+                <Grid
+                    Padding="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Image
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HeightRequest="150"
+                        Source="camiseta"
+                        WidthRequest="200"
+                        HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SelCamisetaComand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        FontAttributes="Bold"
+                        Text="Camiseta">
+                    </Label>
+                    <Image
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HeightRequest="150"
+                        Source="polo"
+                        WidthRequest="200"
+                        HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SelPoloComand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        FontAttributes="Bold"
+                        Text="Polo">
+                    </Label>
+                 </Grid>
+                <StackLayout
+                    Padding="1">
+                    <Entry
+                        FontSize="Medium"
+                        IsEnabled="{Binding IsEnabled}"
+                        Text="{Binding TipoPrenda}"
+                        TextColor="Azure">
+                    </Entry>
+                </StackLayout>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Genero">
+                        </Label>
+                        <Picker 
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            x:Name="pickerGenero"
+                            VerticalOptions="Start"
+                            Title="Seleccionar"
+                            FontSize="Small"
+                            SelectedItem="{Binding Genero}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Masculino</x:String>
+                                    <x:String>Femenino</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Tipo Cuello">
+                        </Label>
+                        <Picker 
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            x:Name="pickerTC"
+                            VerticalOptions="Start"
+                            Title="Seleccionar"
+                            FontSize="Small"
+                            IsEnabled="{Binding IsEnabledTC}"
+                            SelectedItem="{Binding TipoCuello}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Cuello Redondo</x:String>
+                                    <x:String>Cuello en V</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Titulos de Tela">
+                        </Label>
+                        <Picker 
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            x:Name="pickerTituloTela"
+                            VerticalOptions="Start"
+                            Title="Seleccionar"
+                            FontSize="Small"
+                            SelectedItem="{Binding TituloTela}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Aguila</x:String>
+                                    <x:String>Mirla</x:String>
+                                    <x:String>Mil Rayas</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Costo Hilaza">
+                        </Label>
+                        <Entry
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            Keyboard="Numeric"
+                            Placeholder="Costo Hilaza"
+                            Text="{Binding CostoHilaza}">
+                        </Entry>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Costo Tejeduria">
+                        </Label>
+                        <Entry
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="Bold"
+                            Keyboard="Numeric"
+                            Placeholder="Costo Tejeduria"
+                            Text="{Binding CostoTejeduria}">
+                        </Entry>                        
+                    </Grid>
+                </Frame>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        BackgroundColor="Blue"                        
+                        Command="{Binding CotizarCommand}"
+                        Text="Cotizar"
+                        TextColor="White">
+                     </Button>
+                    <Button
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        BackgroundColor="Red"
+                        Command="{Binding CancelarCommand}"
+                        Text="Cancelar"
+                        TextColor="White">
+                    </Button>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

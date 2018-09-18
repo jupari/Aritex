@@ -1,8 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:infra="clr-namespace:Aritex.Infrastructure"
              x:Class="Aritex.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <infra:InstanceLocator x:Key="Locator"/>
 
+            <!-- Parameters -->
+            <x:String x:Key="UrlAPI">https://172.21.180.159:8083</x:String>
+            <x:String x:Key="UrlPrefix">/api</x:String>
+            <x:String x:Key="UrlController">/titulo_tela</x:String>
+            <x:String x:Key="UrlUsersController">/Users</x:String>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

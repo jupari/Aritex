@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aritex.iOS", "Aritex\Aritex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aritex.UWP", "Aritex\Aritex.UWP\Aritex.UWP.csproj", "{390B7DD5-043F-478E-8553-8EC9DE438F6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aritex", "Aritex\Aritex\Aritex.csproj", "{3985E250-6915-4DEB-985F-7B2FF6340337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aritex", "Aritex\Aritex\Aritex.csproj", "{3985E250-6915-4DEB-985F-7B2FF6340337}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aritex.Backend", "Aritex.Backend\Aritex.Backend.csproj", "{1D3F0672-53E0-48E7-8B52-2459A3F049FD}"
 EndProject

@@ -1,0 +1,82 @@
+﻿@model Aritex.Common.Models.Titulo_Tela
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Titulo_Tela</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Cuello)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Cuello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Factor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Factor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consumo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consumo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PxK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PxK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdTitulo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
