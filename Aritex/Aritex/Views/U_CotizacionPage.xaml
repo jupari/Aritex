@@ -12,74 +12,108 @@
             Margin="5,5">
             <StackLayout>
                 <Label
-                    Margin="5"
                     HorizontalOptions="CenterAndExpand"
                     FontAttributes="Bold"
                     FontSize="Small"
                     Text="Tipo de Prenda">
                 </Label>
-                <Grid
-                    Padding="5">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.25*"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Image
-                        Grid.Column="0"
-                        Grid.Row="0"
-                        HeightRequest="150"
-                        Source="camiseta"
-                        WidthRequest="200"
-                        HorizontalOptions="Center">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SelCamisetaComand}"/>
-                        </Image.GestureRecognizers>
-                    </Image>
                     <Label
                         Grid.Column="0"
-                        Grid.Row="1"
-                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="0"
+                        HorizontalOptions="Center"
                         FontSize="Small"
                         FontAttributes="Bold"
                         Text="Camiseta">
                     </Label>
                     <Image
-                        Grid.Column="1"
-                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.Row="1"
                         HeightRequest="150"
-                        Source="polo"
-                        WidthRequest="200"
-                        HorizontalOptions="Center">
+                        Source="camiseta"
+                        WidthRequest="150"
+                        VerticalOptions="Fill">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SelPoloComand}"/>
+                            <TapGestureRecognizer Command="{Binding SelCamisetaComand}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Label
                         Grid.Column="1"
-                        Grid.Row="1"
-                        HorizontalOptions="CenterAndExpand"
+                        Grid.Row="0"
+                        HorizontalOptions="Center"
                         FontSize="Small"
                         FontAttributes="Bold"
                         Text="Polo">
                     </Label>
+                    <Image
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        HeightRequest="150"
+                        Source="polo"
+                        WidthRequest="150"
+                        VerticalOptions="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SelPoloComand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                  </Grid>
                 <StackLayout
                     Padding="1">
-                    <Entry
+                    <Label
                         FontSize="Medium"
+                        HorizontalOptions="CenterAndExpand"
                         IsEnabled="{Binding IsEnabled}"
                         Text="{Binding TipoPrenda}"
-                        TextColor="Azure">
-                    </Entry>
+                        TextColor="Blue">
+                    </Label>
                 </StackLayout>
                 <Frame
                     CornerRadius="20"
                     HasShadow="true"
-                    Margin="5">
+                    HeightRequest="20">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Titulos T." >
+                        </Label>
+                        <Picker 
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            x:Name="pickerTituloTela"
+                            VerticalOptions="Start"
+                            Title="Seleccionar"
+                            FontSize="Small"
+                            SelectedItem="{Binding TituloTela}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Aguila</x:String>
+                                    <x:String>Mirla</x:String>
+                                    <x:String>Mil Rayas</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="20">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -113,7 +147,7 @@
                 <Frame
                     CornerRadius="20"
                     HasShadow="true"
-                    Margin="5">
+                    HeightRequest="20">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -148,47 +182,16 @@
                 <Frame
                     CornerRadius="20"
                     HasShadow="true"
-                    Margin="5">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label
-                            Grid.Column="0"
-                            Grid.Row="0"
-                            FontAttributes="Bold"
-                            FontSize="Small"
-                            VerticalOptions="CenterAndExpand"
-                            Text="Titulos de Tela">
-                        </Label>
-                        <Picker 
-                            Grid.Column="1"
-                            Grid.Row="0"
-                            x:Name="pickerTituloTela"
-                            VerticalOptions="Start"
-                            Title="Seleccionar"
-                            FontSize="Small"
-                            SelectedItem="{Binding TituloTela}">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Aguila</x:String>
-                                    <x:String>Mirla</x:String>
-                                    <x:String>Mil Rayas</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
-                        </Picker>
-                    </Grid>
-                </Frame>
-                <Frame
-                    CornerRadius="20"
-                    HasShadow="true"
-                    Margin="5">
+                    HeightRequest="90">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
                         <Label
                             Grid.Column="0"
                             Grid.Row="0"
@@ -201,14 +204,14 @@
                             Grid.Column="1"
                             Grid.Row="0"
                             FontAttributes="Bold"
+                            FontSize="Small"
                             Keyboard="Numeric"
-                            Placeholder="Costo Hilaza"
+                            Placeholder="Hilaza"
                             Text="{Binding CostoHilaza}">
                         </Entry>
                         <Label
                             Grid.Column="0"
                             Grid.Row="1"
-                            FontAttributes="Bold"
                             FontSize="Small"
                             VerticalOptions="CenterAndExpand"
                             Text="Costo Tejeduria">
@@ -216,9 +219,9 @@
                         <Entry
                             Grid.Column="1"
                             Grid.Row="1"
-                            FontAttributes="Bold"
+                            FontSize="Small"
                             Keyboard="Numeric"
-                            Placeholder="Costo Tejeduria"
+                            Placeholder="Tejeduria"
                             Text="{Binding CostoTejeduria}">
                         </Entry>                        
                     </Grid>
@@ -232,7 +235,9 @@
                         Grid.Column="0"
                         Grid.Row="0"
                         BackgroundColor="Blue"                        
+                        BorderRadius="23"
                         Command="{Binding CotizarCommand}"
+                        HeightRequest="46"
                         Text="Cotizar"
                         TextColor="White">
                      </Button>
@@ -240,7 +245,9 @@
                         Grid.Column="1"
                         Grid.Row="0"
                         BackgroundColor="Red"
+                        BorderRadius="23"
                         Command="{Binding CancelarCommand}"
+                        HeightRequest="46"
                         Text="Cancelar"
                         TextColor="White">
                     </Button>

@@ -198,16 +198,36 @@
                 }
                 var respxk = res.Select(p=>p.PxK).FirstOrDefault();
                 var pxk = decimal.Parse(respxk.ToString());
-                this.ParametrosCotizacion = new ParametrosCotizacion
+
+                if (this.TipoPrenda == "Tipo Camiseta")
                 {
-                    Genero = this.genero,
-                    TipoPrenda = this.TipoPrenda,
-                    TipoCuello = this.TipoCuello,
-                    TituloTela = this.TituloTela,
-                    CostoHilaza = this.CostoHilaza,
-                    CostoTejeduria = this.CostoTejeduria,
-                    ResCotizar = (this.CostoHilaza + CostoTejeduria) * pxk,
-                };
+                    this.ParametrosCotizacion = new ParametrosCotizacion
+                    {
+                        Genero = this.genero,
+                        TipoPrenda = this.TipoPrenda,
+                        TipoCuello = this.TipoCuello,
+                        TituloTela = this.TituloTela,
+                        CostoHilaza = this.CostoHilaza,
+                        CostoTejeduria = this.CostoTejeduria,
+                        ResCotizar = (this.CostoHilaza + CostoTejeduria) * pxk,
+                        Imagen = "camiseta",
+                    };
+                }
+                else
+                {
+                    this.ParametrosCotizacion = new ParametrosCotizacion
+                    {
+                        Genero = this.genero,
+                        TipoPrenda = this.TipoPrenda,
+                        TipoCuello = this.TipoCuello,
+                        TituloTela = this.TituloTela,
+                        CostoHilaza = this.CostoHilaza,
+                        CostoTejeduria = this.CostoTejeduria,
+                        ResCotizar = (this.CostoHilaza + CostoTejeduria) * pxk,
+                        Imagen = "polo",
+                    };
+                }
+
             }
 
             MainViewModel.GetInstance().U_ResultadoCotizacion = new U_ResultadoCotizacionViewModel(ParametrosCotizacion);
@@ -231,12 +251,21 @@
         #region Metodos
         private async void LoadTitulos()
         {
-
+            var connection = await this.apiService.CheckConnection();
+            if (!connection.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                     connection.Message,
+                    "Aceptar"
+                    );
+                return;
+            }
             //var url = Application.Current.Resources["UrlAPI"].ToString();
             //var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             //var controller = Application.Current.Resources["UrlController"].ToString();
             //var response = await apiService.GetList<Titulo_Tela>(url,prefix,controller);
-            var response = await apiService.GetList<Titulo_Tela>("http://172.21.180.159:8083","/api" , "/titulo_tela");
+            var response = await apiService.GetList<Titulo_Tela>("http://181.48.119.100:3058","/api" , "/titulo_tela");
             if (!response.IsSuccess)
             {
                 await Application.Current.MainPage.DisplayAlert(

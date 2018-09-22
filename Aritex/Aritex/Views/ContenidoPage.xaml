@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="AliceBlue"
+             x:Class="Aritex.Views.ContenidoPage"
+             Title="Ventas Diarias">
+
+    <ContentPage.Content>
+        <ScrollView
+              BindingContext="{Binding Contenido}"
+              Padding="10">
+            <StackLayout>
+                <Frame
+                    HasShadow="true"
+                    HeightRequest="300">
+                    <chart:ChartView 
+                        x:Name="GraficoVentas" 
+                        Chart="{Binding GraficoVentas}"
+                        HeightRequest="300"/>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HeightRequest="50"
+                    BackgroundColor="Sienna">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="NACIONAL"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor001,StringFormat='${0:N3}'}"
+                            TextColor="White">
+                        </Label>                        
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="50"
+                    BackgroundColor="Blue">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="CEDI CALI"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor002,StringFormat='${0:N3}'}"
+                            TextColor="White">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="50"
+                    BackgroundColor="Green">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="CEDI MEDELLIN"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor003,StringFormat='${0:N3}'}"
+                            TextColor="White">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="50"
+                    BackgroundColor="GreenYellow">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="OUTELET LA 70"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor004,StringFormat='${0:N3}'}"
+                            TextColor="White">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="50"
+                    BackgroundColor="Pink">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="CEDI BQUILLA"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor008,StringFormat='${0:N3}'}"
+                            TextColor="White">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="50"
+                    BackgroundColor="Orange">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="REMATE">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor009,StringFormat='${0:N3}'}">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="50"
+                    BackgroundColor="BlueViolet">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="INSTITUCIONAL"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor019,StringFormat='${0:N3}'}"
+                            TextColor="White">
+                        </Label>
+                    </Grid>
+                </Frame>
+                <Frame
+                    CornerRadius="20"
+                    HasShadow="true"
+                    HeightRequest="50"
+                    BackgroundColor="Fuchsia">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            Text="OUTLET SALOMIA"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="Total Vtas Diarias"
+                            TextColor="White">
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            FontAttributes="None"
+                            FontSize="Small"
+                            Text="{Binding Valor025,StringFormat='${0:N3}'}"
+                            TextColor="White">
+                        </Label>
+                    </Grid>
+                </Frame>
+
+            </StackLayout>            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

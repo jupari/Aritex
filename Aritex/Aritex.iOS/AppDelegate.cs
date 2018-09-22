@@ -23,8 +23,11 @@ namespace Aritex.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //liscencia
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ4NzhAMzEzNjJlMzIyZTMwWUtNYW04ZERLQi9SaEdXVDhuUFlua2xLazhMVHJWM0d4SnduTTVhVFhuWT0=");
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            //Syncfusion.SfChart.XForms.iOS.Renderers.SfChartRenderer.Init();
             //SfRadioButtonRenderer.Init();
             return base.FinishedLaunching(app, options);
         }

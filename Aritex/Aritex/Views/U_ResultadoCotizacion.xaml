@@ -13,11 +13,10 @@
                     FontAttributes="Bold"
                     FontSize="Medium"
                     HorizontalOptions="Center"
-                    Text="{Binding TipoPrenda}">
-
+                    Text="{Binding ParametrosCotizacion.TipoPrenda}">
                 </Label>
-                <Image>
-
+                <Image
+                    Source="{Binding ParametrosCotizacion.Imagen}">
                 </Image>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -32,7 +31,7 @@
                     <Label
                         Grid.Column="1"
                         Grid.Row="0"
-                        BindingContext="{Binding Genero}">
+                        Text="{Binding ParametrosCotizacion.Genero}">
                     </Label>
                     <Label
                         Grid.Column="0"
@@ -43,59 +42,54 @@
                     <Label
                         Grid.Column="1"
                         Grid.Row="1"
-                        BindingContext="{Binding TipoCuello}">
-
+                        Text="{Binding ParametrosCotizacion.TipoCuello}">
                     </Label>
                     <Label
                         Grid.Column="0"
                         Grid.Row="2"
                         Text="Titulo Tela">
-
                     </Label>
                     <Label
                         Grid.Column="1"
                         Grid.Row="2"
-                        BindingContext="{Binding TituloTela}">
-
+                        Text="{Binding ParametrosCotizacion.TituloTela}">
                     </Label>
                     <Label
                         Grid.Column="0"
                         Grid.Row="3"
                         Text="Costo Hilaza">
-
                     </Label>
                     <Label
                         Grid.Column="1"
                         Grid.Row="3"
-                        BindingContext="{Binding CostoHilaza}">
-
+                        Text="{Binding ParametrosCotizacion.CostoHilaza}">
                     </Label>
                     <Label
                         Grid.Column="0"
                         Grid.Row="4"
                         Text="Costo Tejed.">
-
                     </Label>
                     <Label
                         Grid.Column="1"
                         Grid.Row="4"
-                        BindingContext="{Binding CostoTejeduria}">
+                        Text="{Binding ParametrosCotizacion.CostoTejeduria}">
                     </Label>
                 </Grid>
                 <Label
-                    BindingContext="{Binding ResCotizar, StringFormat='${0}'}"
                     FontAttributes="Bold"
                     FontSize="Large"
                     HorizontalOptions="CenterAndExpand"
+                    Text="{Binding ParametrosCotizacion.ResCotizar, StringFormat='${0}'}"
                     TextColor="Brown">
                 </Label>
                 <Button
                     BackgroundColor="Blue"
+                    BorderRadius="23"
                     Command="{Binding VolverCotizarCommand}"
+                    HeightRequest="46"
                     Text="Volver"
                     TextColor="White">
                 </Button>
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

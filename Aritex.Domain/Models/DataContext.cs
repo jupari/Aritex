@@ -10,5 +10,7 @@
         }
 
         public System.Data.Entity.DbSet<Aritex.Common.Models.Titulo_Tela> Titulo_Tela { get; set; }
+
+        public System.Data.Entity.DbSet<Aritex.Common.Models.VentasDia> VentasDias { get; set; }
     }
 }

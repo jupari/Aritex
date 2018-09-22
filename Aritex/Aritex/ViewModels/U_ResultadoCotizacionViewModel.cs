@@ -1,9 +1,9 @@
 ﻿namespace Aritex.ViewModels
 {
-    using Aritex.Common.Models;
-    using GalaSoft.MvvmLight.Command;
-    using System;
     using System.Windows.Input;
+    using Common.Models;
+    using GalaSoft.MvvmLight.Command;
+    using Xamarin.Forms;
 
     public class U_ResultadoCotizacionViewModel:BaseViewModel
     {
@@ -15,10 +15,11 @@
         private string tipoPrenda;
         private decimal costoHilaza;
         private decimal costoTejeduria;
+        private string imagen;
         private decimal resCotizar;
         #endregion
         #region Propiedades
-        private ParametrosCotizacion ParametrosCotizacion
+        public ParametrosCotizacion ParametrosCotizacion
         {
             get { return this.parametrosCotizacion; }
             set { this.SetValue(ref this.parametrosCotizacion, value); }
@@ -46,6 +47,12 @@
             set { this.SetValue(ref this.tituloTela, value); }
         }
 
+        public string Imagen
+        {
+            get { return this.imagen; }
+            set { this.SetValue(ref this.imagen, value); }
+        }
+
         public decimal CostoHilaza
         {
             get { return this.costoHilaza; }
@@ -56,7 +63,8 @@
             get { return this.costoTejeduria; }
             set { this.SetValue(ref this.costoTejeduria, value); }
         }
-        public decimal ResCotizar
+
+         public decimal ResCotizar
         {
             get { return this.resCotizar; }
             set { this.SetValue(ref this.resCotizar, value); }
@@ -80,9 +88,10 @@
             }
         }
 
-        private void VolverCotizar()
+        private async void VolverCotizar()
         {
-   
+            MainViewModel.GetInstance().U_Cotizacion=new U_CotizacionViewModel();
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
         #endregion
     }

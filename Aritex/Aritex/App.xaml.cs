@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Aritex.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Aritex
@@ -13,9 +14,13 @@ namespace Aritex
 
         public App()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ4NzhAMzEzNjJlMzIyZTMwWUtNYW04ZERLQi9SaEdXVDhuUFlua2xLazhMVHJWM0d4SnduTTVhVFhuWT0=");
+
             InitializeComponent();
 
-            MainPage =new NavigationPage(new U_CotizacionPage());
+            MainViewModel.GetInstance().Contenido = new ContenidoViewModel();
+            MainPage =new NavigationPage(new ContenidoPage());
         }
 
         protected override void OnStart()

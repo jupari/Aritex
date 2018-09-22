@@ -14,6 +14,8 @@ namespace Aritex.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ4NzhAMzEzNjJlMzIyZTMwWUtNYW04ZERLQi9SaEdXVDhuUFlua2xLazhMVHJWM0d4SnduTTVhVFhuWT0=");
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
